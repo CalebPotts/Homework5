@@ -1,14 +1,19 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Ionic Blank
+      CHINESE RESTAURANT MENU
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+  <ion-list *ngFor="let menulist of menulists">
+    <ion-list-header>
+      {{ menulist.header }}
+    </ion-list-header>
+
+    <button clear ion-item *ngFor="let menulistItem of menulist.menuItems" (click)="itemClicked(menulistItem)">
+      {{ menulistItem.item }}
+    </button>
+  </ion-list>
 </ion-content>
